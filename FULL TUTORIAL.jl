@@ -551,3 +551,70 @@ methods(mygenericfunction)
 
 methods(+)
 #198 different methods 
+
+#! ANONYMOUS FUNCITON 
+
+firstname = [
+    "Asteris",
+    "Eleni",
+    "BingBong"
+]
+
+@show map(length,firstname) 
+
+map(x -> x* " Asteris", firstname) #anonymous funciton that adds that string to every single string variable inside the []
+
+#! STANDARD LIBRARY
+# Julia base so far 
+# Standard Library has more useful functions not for day to day usage 
+
+# example 1 
+rand(10)
+
+# Random Numbers Library 
+using Random
+
+Random.seed!(1)
+
+rand(10)
+
+data = randn(1000)
+
+function average(x::Vector)
+    sum(x)/length(x)
+end
+
+average(data)
+
+# Statistics Library 
+using Statistics
+
+mean(data)  
+#same result
+
+median(data)
+
+std(data)
+
+
+#! PACKAGES
+# Plots Package 
+
+using Plots
+
+f(x) = x^3 -2x^2 +3x
+
+plot(f)
+
+plot(f;
+    
+    linewidth = 5,
+    color = :red,
+    lims = (-2,2),
+    
+)
+
+for i = 1:3:12
+    plot(f(i))
+end
+
